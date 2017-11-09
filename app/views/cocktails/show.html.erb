@@ -1,6 +1,16 @@
 <div class="container">
   <h2><%= @cocktail.name %></h2>
-  <p><%= @dose.description %></p>
 
-  <p><%= link_to "add new dose", new_cocktail_dose_path(@dose), class: "btn btn-primary" %></p>
+  <p>Doses</p>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "Delete dose", dose_path(dose), class: "btn btn-danger",
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </li>
+     <% end %>
+  </ul>
+  <p>Add A new dose</p>
+  <%= render 'doses/form' %>
 </div>
