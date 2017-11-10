@@ -23,14 +23,6 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    @cocktail.update(cocktail_params)
-    redirect_to cocktail_path(@cocktail)
-  end
-
   private
 
   def set_cocktail
@@ -38,7 +30,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :doses)
+    params.require(:cocktail).permit(:name)
   end
 end
 
