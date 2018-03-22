@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      <%= content_for(:name) ? "Miss Cocktail | #{yield(:name)} " : "Miss Cocktail" %>
+      <%= content_for(:name) ? "Miss Smoothie | #{yield(:name)} " : "Miss Smoothie" %>
   </title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <%= render 'shared/navbar' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

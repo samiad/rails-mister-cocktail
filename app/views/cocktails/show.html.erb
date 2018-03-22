@@ -3,8 +3,9 @@
   <%= @cocktail.name %>
   <% end %>
   <h2><%= @cocktail.name %></h2>
+   <%= cl_image_tag @cocktail.picture.path, width: 200, height: 300, crop: :fill %>
 
-  <p>Doses</p>
+  <p>Recette</p>
   <ul>
     <% @cocktail.doses.each do |dose| %>
       <% if dose.persisted? %>
@@ -15,6 +16,6 @@
       <% end %>
      <% end %>
   </ul>
-  <p>Add A new dose</p>
+  <p>Ajoutes un ingredient</p>
   <%= render 'doses/form' %>
 </div>
